@@ -14,11 +14,16 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var allButtonsStackView: UIStackView!
     
+    //MARK: - Properties
+    
+    private let playground = FilesPlayground()
+    
     //MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        playground.activate()
         setupUI()
     }
     
@@ -35,8 +40,51 @@ class ViewController: UIViewController {
         }
     }
     
+    private func performApropriateMethod(for method: Methods) {
+        switch method {
+        case .accessingUserDirectories:
+            playground.accessingUserDirectories()
+        case .locatingSystemDirectories:
+            playground.locatingSystemDirectories()
+        case .locatingApplicationGroupContainerDirectories:
+            playground.locatingApplicationGroupContainerDirectories()
+        case .discoveringDirectoryContent:
+            playground.discoveringDirectoryContent()
+        case .creatingAndDeletingItems:
+            playground.creatingAndDeletingItems()
+        case .movingAndCopyingItems:
+            playground.movingAndCopyingItems()
+        case .managingICloudBasedItems:
+            playground.managingICloudBasedItems()
+        case .creatingSymbolicAndHardLinks:
+            playground.creatingSymbolicAndHardLinks()
+        case .determiningAccessToFiles:
+            playground.determiningAccessToFiles()
+        case .gettingAndSettingAttributes:
+            playground.gettingAndSettingAttributes()
+        case .gettingAndComparingFileContent:
+            playground.gettingAndComparingFileContent()
+        case .gettingTheRelationshipBetweenItems:
+            playground.gettingTheRelationshipBetweenItems()
+        case .convertingFilePathsToStrings:
+            playground.convertingFilePathsToStrings()
+        case .managingTheCurrentDirectory:
+            playground.managingTheCurrentDirectory()
+        case .constants:
+            playground.constants()
+        case .filePathFunctions:
+            playground.filePathFunctions()
+        }
+    }
+    
     //MARK: - Actions
     
     @IBAction func onMethodCall(_ sender: UIButton) {
+        let index = self.index(for: sender)
+        let method = Methods(rawValue: index)!
+        
+        performApropriateMethod(for: method)
+        
+        sender.isEnabled = false
     }
 }
