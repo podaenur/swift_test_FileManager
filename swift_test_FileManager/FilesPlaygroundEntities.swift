@@ -8,7 +8,8 @@
 
 import Foundation
 
-enum Methods: Int, RawRepresentable {
+enum Methods: Int {
+    //  16 cases
     case accessingUserDirectories = 0
     case locatingSystemDirectories
     case locatingApplicationGroupContainerDirectories
@@ -26,33 +27,7 @@ enum Methods: Int, RawRepresentable {
     case constants
     case filePathFunctions
     
-    //MARK: - RawRepresentable
-    
-    typealias RawValue = String
-    
-    init?(rawValue: String) {
-        switch rawValue {
-        case "Accessing User Directories":                          self = .accessingUserDirectories
-        case "Locating System Directories":                         self = .locatingSystemDirectories
-        case "Locating Application Group Container Directories":    self = .locatingApplicationGroupContainerDirectories
-        case "Discovering Directory Content":                       self = .discoveringDirectoryContent
-        case "Creating And Deleting Items":                         self = .creatingAndDeletingItems
-        case "Moving And Copying Items":                            self = .movingAndCopyingItems
-        case "Managing iCloud Based Items":                         self = .managingICloudBasedItems
-        case "Creating Symbolic And Hard Links":                    self = .creatingSymbolicAndHardLinks
-        case "Determining Access To Files":                         self = .determiningAccessToFiles
-        case "Getting And Setting Attributes":                      self = .gettingAndSettingAttributes
-        case "Getting And Comparing File Content":                  self = .gettingAndComparingFileContent
-        case "Getting The Relationship Between Items":              self = .gettingTheRelationshipBetweenItems
-        case "Converting File Paths To Strings":                    self = .convertingFilePathsToStrings
-        case "Managing The Current Directory":                      self = .managingTheCurrentDirectory
-        case "Constants":                                           self = .constants
-        case "File Path Functions":                                 self = .filePathFunctions
-        default: return nil
-        }
-    }
-    
-    var rawValue: String {
+    var stringValue: String {
         switch self {
         case .accessingUserDirectories:                     return "Accessing User Directories"
         case .locatingSystemDirectories:                    return "Locating System Directories"
