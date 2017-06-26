@@ -26,10 +26,8 @@ class FilesPlayground: NSObject {
         manager = FileManager()
 //        manager?.delegate = self as FileManagerDelegate
         let token = NotificationCenter.default.addObserver(forName: .NSUbiquityIdentityDidChange, object: nil, queue: nil) {
-
+            (_) in
             print("NSUbiquityIdentityDidChange notification received.")
-            guard let _userInfo = $0.userInfo else { return }
-            print("UserInfo: \(_userInfo)")
         }
         
         tokens += [token]
