@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XBQ-Gn-TvP">
-                                <rect key="frame" x="164" y="93.5" width="46" height="480"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XBQ-Gn-TvP">
+                                <rect key="frame" x="164.5" y="33.5" width="46" height="600"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvX-9B-me6" customClass="CheckmarkButton" customModule="swift_test_FileManager" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
@@ -31,105 +32,105 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6y-01-3dF" customClass="CrossButton" customModule="swift_test_FileManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="30" width="46" height="30"/>
+                                        <rect key="frame" x="0.0" y="38" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="onMethodCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TH9-fg-P4o"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MnP-Xq-AI9" customClass="CrossButton" customModule="swift_test_FileManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="60" width="46" height="30"/>
+                                        <rect key="frame" x="0.0" y="76" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="onMethodCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PYk-7q-v5e"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5do-kA-858" customClass="CrossButton" customModule="swift_test_FileManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="90" width="46" height="30"/>
+                                        <rect key="frame" x="0.0" y="114" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="onMethodCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xvB-Xa-l5U"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8V-Ya-SGj" customClass="CrossButton" customModule="swift_test_FileManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="120" width="46" height="30"/>
+                                        <rect key="frame" x="0.0" y="152" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="onMethodCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cmS-vI-7gQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w82-aL-iql" customClass="CrossButton" customModule="swift_test_FileManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="150" width="46" height="30"/>
+                                        <rect key="frame" x="0.0" y="190" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="onMethodCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="udJ-Vd-FzY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaJ-dr-UwG" customClass="CrossButton" customModule="swift_test_FileManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="180" width="46" height="30"/>
+                                        <rect key="frame" x="0.0" y="228" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="onMethodCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HEb-wV-ubh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erd-aJ-d5a" customClass="CrossButton" customModule="swift_test_FileManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="210" width="46" height="30"/>
+                                        <rect key="frame" x="0.0" y="266" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="onMethodCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9p4-GA-w3t"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7v3-r8-VjS" customClass="CrossButton" customModule="swift_test_FileManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="240" width="46" height="30"/>
+                                        <rect key="frame" x="0.0" y="304" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="onMethodCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8W2-IF-Hil"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vcs-1L-WSx" customClass="CrossButton" customModule="swift_test_FileManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="270" width="46" height="30"/>
+                                        <rect key="frame" x="0.0" y="342" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="onMethodCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yZ6-CF-WbL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJg-Lr-0Wa" customClass="CrossButton" customModule="swift_test_FileManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="300" width="46" height="30"/>
+                                        <rect key="frame" x="0.0" y="380" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="onMethodCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tdJ-mf-bU1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEw-Uw-4BO" customClass="CrossButton" customModule="swift_test_FileManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="330" width="46" height="30"/>
+                                        <rect key="frame" x="0.0" y="418" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="onMethodCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KYH-Yg-2nr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5PK-re-qYf" customClass="CrossButton" customModule="swift_test_FileManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="360" width="46" height="30"/>
+                                        <rect key="frame" x="0.0" y="456" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="onMethodCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KXk-dL-L1x"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ii-kA-GP4" customClass="CrossButton" customModule="swift_test_FileManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="390" width="46" height="30"/>
+                                        <rect key="frame" x="0.0" y="494" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="onMethodCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ehn-Dm-5dm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQs-xv-EYo" customClass="CrossButton" customModule="swift_test_FileManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="420" width="46" height="30"/>
+                                        <rect key="frame" x="0.0" y="532" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="onMethodCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uB1-z3-LnY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xh7-NK-v5U" customClass="CrossButton" customModule="swift_test_FileManager" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="450" width="46" height="30"/>
+                                        <rect key="frame" x="0.0" y="570" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="onMethodCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rvu-CQ-Sbo"/>
@@ -140,7 +141,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="XBQ-Gn-TvP" secondAttribute="bottom" constant="8" id="Ayc-Eh-Cba"/>
+                            <constraint firstItem="XBQ-Gn-TvP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="Xc3-DY-CD3"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="XBQ-Gn-TvP" secondAttribute="trailing" constant="8" id="cEl-ia-a12"/>
                             <constraint firstItem="XBQ-Gn-TvP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gWw-pa-Td7"/>
+                            <constraint firstItem="XBQ-Gn-TvP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="tl0-kF-ZbU"/>
                             <constraint firstItem="XBQ-Gn-TvP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w5j-U2-8HC"/>
                         </constraints>
                     </view>
