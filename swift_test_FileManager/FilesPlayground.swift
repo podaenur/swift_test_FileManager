@@ -38,7 +38,13 @@ class FilesPlayground: NSObject {
     }
     
     func accessingUserDirectories() {
-    
+        if  #available(iOS 10.0, *) {
+            let url = manager!.temporaryDirectory
+            print(url)
+            
+        } else {
+            print("iOS 10.0+ only")
+        }
     }
     
     func locatingSystemDirectories() {
