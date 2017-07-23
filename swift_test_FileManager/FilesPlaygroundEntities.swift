@@ -28,23 +28,22 @@ enum Methods: Int {
     case filePathFunctions
     
     var stringValue: String {
-        switch self {
-        case .accessingUserDirectories:                     return "Accessing User Directories"
-        case .locatingSystemDirectories:                    return "Locating System Directories"
-        case .locatingApplicationGroupContainerDirectories: return "Locating Application Group Container Directories"
-        case .discoveringDirectoryContent:                  return "Discovering Directory Content"
-        case .creatingAndDeletingItems:                     return "Creating And Deleting Items"
-        case .movingAndCopyingItems:                        return "Moving And Copying Items"
-        case .managingICloudBasedItems:                     return "Managing iCloud Based Items"
-        case .creatingSymbolicAndHardLinks:                 return "Creating Symbolic And Hard Links"
-        case .determiningAccessToFiles:                     return "Determining Access To Files"
-        case .gettingAndSettingAttributes:                  return "Getting And Setting Attributes"
-        case .gettingAndComparingFileContent:               return "Getting And Comparing File Content"
-        case .gettingTheRelationshipBetweenItems:           return "Getting The Relationship Between Items"
-        case .convertingFilePathsToStrings:                 return "Converting File Paths To Strings"
-        case .managingTheCurrentDirectory:                  return "Managing The Current Directory"
-        case .constants:                                    return "Constants"
-        case .filePathFunctions:                            return "File Path Functions"
-        }
+        let sense = ["Accessing User Directories",
+                     "Locating System Directories",
+                     "Locating Application Group Container Directories",
+                     "Discovering Directory Content",
+                     "Creating And Deleting Items",
+                     "Moving And Copying Items",
+                     "Managing iCloud Based Items",
+                     "Creating Symbolic And Hard Links",
+                     "Determining Access To Files",
+                     "Getting And Setting Attributes",
+                     "Getting And Comparing File Content",
+                     "Getting The Relationship Between Items",
+                     "Converting File Paths To Strings",
+                     "Managing The Current Directory",
+                     "Constants",
+                     "File Path Functions"]
+        return sense[self.rawValue]
     }
 }
