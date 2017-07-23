@@ -206,11 +206,21 @@ class FilesPlayground: NSObject {
     }
     
     private func _URLForDirectoryInDomainAppropriateForURLCreateError() {
-        fatalError("Unimplemented")
+        do {
+            let url = try manager!.url(for: .documentDirectory,
+                                       in: .userDomainMask,
+                                       appropriateFor: nil,
+                                       create: false)
+            print(url)
+        } catch let error {
+            print(error)
+        }
     }
     
     private func _URLsForDirectoryInDomains() {
-        fatalError("Unimplemented")
+        let urls = manager!.urls(for: .applicationDirectory,
+                                 in: .systemDomainMask)
+        print(urls)
     }
     
     private func _containerURLForSecurityApplicationGroupIdentifier() {
