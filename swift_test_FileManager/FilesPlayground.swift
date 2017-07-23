@@ -571,29 +571,90 @@ class FilesPlayground: NSObject {
         }
     }
     
-    
-    
-    
-    
+    //TODO: нужен реальный путь реального файла
     private func _createSymbolicLinkAtURLWithDestinationURLError() {
-        fatalError("Unimplemented")
+        /// Создает символьный линк на определенный URL, который указывает на элемент по заданной URL
+        
+        /// URL файла, на который создавать новый символьный линк. Последний компонент пути по URL издан как имя линка
+        let path = URL(string: NSTemporaryDirectory())!.appendingPathComponent("someFile.dat")
+        
+        /// URL файла, который содержит элемент на который указываел линк.
+        let destination = URL(string: NSTemporaryDirectory())!
+        
+        do {
+            try manager!.createSymbolicLink(at: path, withDestinationURL: destination)
+        } catch let error {
+            print(error)
+        }
     }
     
+    //TODO: нужен реальный путь реального файла
     private func _createSymbolicLinkAtPathWithDestinationPathError() {
-        fatalError("Unimplemented")
+        /// Создает символьный линк, который указывает на определенное место
+        
+        /// URL файла, на который создавать новый символьный линк. Последний компонент пути по URL издан как имя линка
+        let path = URL(string: NSTemporaryDirectory())!.appendingPathComponent("someFile.dat")
+        
+        /// URL файла, который содержит элемент на который указываел линк.
+        let destination = URL(string: NSTemporaryDirectory())!
+        
+        do {
+            try manager!.createSymbolicLink(atPath: path.absoluteString, withDestinationPath: destination.absoluteString)
+        } catch let error {
+            print(error)
+        }
     }
     
+    //TODO: нужен реальный путь реального файла
     private func _linkItemAtURLToURLError() {
-        fatalError("Unimplemented")
+        /// Создает сильный линк между элементами по заданным URL'ам
+        
+        /// URL файла, который определяет источник линка. URL в этом параметре не должен быть URL-ссылкой на файл; это должно определять актуальный путь к элементу. Значение в этом параметре не должно быть nil
+        let source = URL(string: NSTemporaryDirectory())!.appendingPathComponent("SourceFile")
+        
+        /// URL файла, который определяет где ты хочешь создать сильный линк. URL в этом параметре не должен быть URL-ссылкой на файл; это должно определять актуальный путь к элементу. Значение в этом параметре не должно быть nil
+        let destination = URL(string: NSTemporaryDirectory())!.appendingPathComponent("DestinationFile")
+        
+        do {
+            try manager!.linkItem(at: source, to: destination)
+        } catch let error {
+            print(error)
+        }
     }
     
+    //TODO: нужен реальный путь реального файла
     private func _linkItemAtPathToPathError() {
-        fatalError("Unimplemented")
+        /// Создает сильный линк между элементами по заданным URL'ам
+        
+        /// URL файла, который определяет источник линка. URL в этом параметре не должен быть URL-ссылкой на файл; это должно определять актуальный путь к элементу. Значение в этом параметре не должно быть nil
+        let source = URL(string: NSTemporaryDirectory())!.appendingPathComponent("SourceFile")
+        
+        /// URL файла, который определяет где ты хочешь создать сильный линк. URL в этом параметре не должен быть URL-ссылкой на файл; это должно определять актуальный путь к элементу. Значение в этом параметре не должно быть nil
+        let destination = URL(string: NSTemporaryDirectory())!.appendingPathComponent("DestinationFile")
+        
+        do {
+            try manager!.linkItem(atPath: source.absoluteString, toPath: destination.absoluteString)
+        } catch let error {
+            print(error)
+        }
     }
     
     private func _destinationOfSymbolicLinkAtPathError() {
-        fatalError("Unimplemented")
+        /// Возвращает путь элемента на который указывает символичный линк
+        
+        /// Путь к файлу или директории
+        let path = URL(string: NSTemporaryDirectory())!.appendingPathComponent("SomeFile.dat")
+        
+        do {
+            try manager!.destinationOfSymbolicLink(atPath: path.absoluteString)
+        } catch let error {
+            print(error)
+        }
     }
+    
+    
+    
+    
     
     private func _fileExistsAtPath() {
         fatalError("Unimplemented")
