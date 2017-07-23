@@ -476,37 +476,104 @@ class FilesPlayground: NSObject {
         }
     }
     
-    
-    
-
-    
     private func _ubiquityIdentityToken() {
-        fatalError("Unimplemented")
+        /// Токен, представляющий идентификатор iCloud  для текущего пользователя
+        
+        print(manager!.ubiquityIdentityToken ?? "Nothing to print")
     }
     
     private func _URLForUbiquityContainerIdentifier() {
-        fatalError("Unimplemented")
+        /// Вернет URL для iCloud контейнера, связанного с определенным идентефикатором и установит доступ к этому контейнеру
+        
+        //??? так ли это
+        let identifier = manager!.ubiquityIdentityToken as! String
+        
+        let url = manager!.url(forUbiquityContainerIdentifier: identifier)
+        print(url ?? "No ubiquity container url")
     }
     
+    //TODO: нужен реальный путь реального файла
     private func _isUbiquitousItemAtURL() {
-        fatalError("Unimplemented")
+        /// Вернет булевый флаг, показывающий определен ли элемент для хранения в iCloud или нет
+        
+        let path = URL(string: NSTemporaryDirectory())!.appendingPathComponent("someTestFile.dat")
+        
+        if manager!.isUbiquitousItem(at: path) {
+            print("Item is for iCloud storaginh")
+        } else {
+            print("Item is not for iCloud storaginh")
+        }
     }
     
+    //TODO: нужен реальный путь реального файла/директории
     private func _setUbiquitousItemAtURLDestinationURLError() {
-        fatalError("Unimplemented")
+        /// Установит должен ли элемент по определенному URL храниться в iCloud или нет
+        
+        let path = URL(string: NSTemporaryDirectory())!
+        
+        /**
+         Moving a file into iCloud Specify the location in iCloud at which to store the file or directory. This URL must be constructed from a URL returned by the
+         URLForUbiquityContainerIdentifier:
+         method, which you use to retrieve the desired iCloud container directory. The URL you specify may contain additional subdirectories so that you can organize your files hierarchically in iCloud. However, you are responsible for creating those intermediate subdirectories (using the
+         NSFileManager
+         class) in your iCloud container directory.
+         Moving a file out of iCloud Specify the location on the local device.
+         */
+        let destination = URL(string: NSTemporaryDirectory())!
+        
+        do {
+            try manager!.setUbiquitous(true, itemAt: path, destinationURL: destination)
+        } catch let error {
+            print(error)
+        }
     }
     
+    //TODO: Проработать реальный файл/директорию
     private func _startDownloadingUbiquitousItemAtURLError() {
-        fatalError("Unimplemented")
+        /// Начнет скачивание (если необходимо) определенного элемента в локальную систему
+        
+        /// Определенный URL для файла или директории в iCloud, который мы хотим скачать
+        let path = URL(string: "todo")!
+        
+        do {
+            try manager!.startDownloadingUbiquitousItem(at: path)
+        } catch let error {
+            print(error)
+        }
     }
     
+    //TODO: Проработать реальный файл/директорию
     private func _evictUbiquitousItemAtURLError() {
-        fatalError("Unimplemented")
+        /// Удалит локальную копию определенного облачного элемента
+        
+        /// Определенный URL для файла или директории в iCloud, который мы хотим скачать
+        let path = URL(string: "todo")!
+        
+        do {
+            try manager!.evictUbiquitousItem(at: path)
+        } catch let error {
+            print(error)
+        }
     }
     
+    //TODO: Проработать реальный файл/директорию
     private func _URLForPublishingUbiquitousItemAtURLExpirationDateError() {
-        fatalError("Unimplemented")
+        /// Вернет URL, который может быть отправлен через email пользователю для возможности скачать копию облачного элемента
+        
+        /// Определенный URL для файла или директории в iCloud, который мы хотим скачать
+        let path = URL(string: "todo")!
+        var expiration: NSDate?
+        
+        do {
+            try manager!.url(forPublishingUbiquitousItemAt: path, expiration: &expiration)
+        } catch let error {
+            print(error)
+        }
     }
+    
+    
+    
+    
     
     private func _createSymbolicLinkAtURLWithDestinationURLError() {
         fatalError("Unimplemented")
