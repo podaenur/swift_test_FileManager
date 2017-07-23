@@ -755,6 +755,10 @@ class FilesPlayground: NSObject {
         fatalError("Unimplemented")
     }
     
+    
+    
+    
+    
     private func _contentsAtPath() {
         fatalError("Unimplemented")
     }
@@ -787,31 +791,63 @@ class FilesPlayground: NSObject {
         fatalError("Unimplemented")
     }
     
+    
+    
+    
+    
     private func _NSFullUserName() {
-        fatalError("Unimplemented")
+        /// Вернет строку, содержащую полное имя текущего пользователя
+        
+        print(NSFullUserName())
     }
     
     private func _NSHomeDirectory() {
-        fatalError("Unimplemented")
+        /// Вернет путь домашней директории либо пользователя либо приложения. Зависит от платформы
+        
+        print(NSHomeDirectory())
     }
     
     private func _NSHomeDirectoryForUser() {
-        fatalError("Unimplemented")
+        /// Вернет путь к домашней директории заданного пользователя
+        
+        let userName = "RootUser"
+        
+        if let directory = NSHomeDirectoryForUser(userName) {
+            print(directory)
+        } else {
+            print("HomeDirectory doesn't exist for specified user")
+        }
     }
     
     private func _NSOpenStepRootDirectory() {
-        fatalError("Unimplemented")
+        /// Вернет рут директорию пользователя системы
+        
+        print(NSOpenStepRootDirectory())
     }
     
+    //TODO: сделать проверку всех возможных путей
     private func _NSSearchPathForDirectoriesInDomains() {
-        fatalError("Unimplemented")
+        /// Создаст список путей к директории поиска
+        /// Директория, которую вернул этот метод, может не существовать. Этот метод просто отдает соответствующую локацию для запрошеной директории. В зависимости от нужд приложения, создание соответствующей директории и любых поддиректорий может быть на усмотрения разработчика
+        
+        let directory: FileManager.SearchPathDirectory = .cachesDirectory
+        let domainMask: FileManager.SearchPathDomainMask = .userDomainMask
+        let shouldExpand = true
+        
+        let pathes = NSSearchPathForDirectoriesInDomains(directory, domainMask, shouldExpand)
+        pathes.forEach { print($0) }
     }
     
     private func _NSTemporaryDirectory() {
-        fatalError("Unimplemented")
+        /// Вернет путь к временной директории для текущего пользователя
+        
+        print(NSTemporaryDirectory())
     }
     
     private func _NSUserName() {
-        fatalError("Unimplemented")
+        /// Returns the logon name of the current user
+        /// Вернет залогиненое имя текущего пользователя
+        
+        print(NSUserName())
     }
 }
