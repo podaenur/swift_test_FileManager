@@ -38,7 +38,7 @@
                                             <action selector="onMethodCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TH9-fg-P4o"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MnP-Xq-AI9" customClass="CrossButton" customModule="swift_test_FileManager" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MnP-Xq-AI9" customClass="CheckmarkButton" customModule="swift_test_FileManager" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="76" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>

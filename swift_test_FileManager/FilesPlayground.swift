@@ -223,8 +223,13 @@ class FilesPlayground: NSObject {
         print(urls)
     }
     
+    //TODO: изучить и реализовать подключение к секьюрному контейнеры
     private func _containerURLForSecurityApplicationGroupIdentifier() {
-        fatalError("Unimplemented")
+        if let url = manager!.containerURL(forSecurityApplicationGroupIdentifier: "com.apple.security.application-groups") {
+            print(url)
+        } else {
+            print("Does nothing...")
+        }
     }
     
     private func _contentsOfDirectoryAtURLIncludingPropertiesForKeysOptionsError() {
