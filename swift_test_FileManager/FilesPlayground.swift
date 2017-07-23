@@ -232,36 +232,81 @@ class FilesPlayground: NSObject {
         }
     }
     
+    //TODO: сделать проверку всех возможных путей
     private func _contentsOfDirectoryAtURLIncludingPropertiesForKeysOptionsError() {
-        fatalError("Unimplemented")
+        let libInSystem = manager!.urls(for: .libraryDirectory, in: .systemDomainMask).first!
+        
+        do {
+            let urls = try manager!.contentsOfDirectory(at: libInSystem,
+                                                        includingPropertiesForKeys: nil,
+                                                        options: .skipsHiddenFiles)
+            print(urls)
+        } catch let error {
+            print(error)
+        }
     }
     
+    //TODO: сделать проверку всех возможных путей
     private func _contentsOfDirectoryAtPathError() {
-        fatalError("Unimplemented")
+        let libInSystem = manager!.urls(for: .libraryDirectory, in: .systemDomainMask).first!
+        
+        do {
+            let contents = try manager!.contentsOfDirectory(atPath: libInSystem.relativePath)
+            print(contents)
+        } catch let error {
+            print(error)
+        }
     }
     
     private func _enumeratorAtURLIncludingPropertiesForKeysOptionsErrorHandler() {
-        fatalError("Unimplemented")
+        //
     }
     
+    //TODO: сделать проверку всех возможных путей
     private func _enumeratorAtPath() {
-        fatalError("Unimplemented")
+        let libInSystem = manager!.urls(for: .libraryDirectory, in: .systemDomainMask).first!
+        
+        var emergencyCount = 15
+        let enumerator = manager!.enumerator(atPath: libInSystem.relativePath)
+        while let file = enumerator?.nextObject() as? String, emergencyCount > 0 {
+            emergencyCount -= 1
+            print(file)
+        }
     }
     
     private func _NSDirectoryEnumerator() {
-        fatalError("Unimplemented")
+        //???  what to do here?
     }
     
     private func _mountedVolumeURLsIncludingResourceValuesForKeysOptions() {
-        fatalError("Unimplemented")
+        if let urls = manager!.mountedVolumeURLs(includingResourceValuesForKeys: nil, options: .produceFileReferenceURLs) {
+            print(urls)
+        } else {
+            print("Nothing hapened")
+        }
     }
     
+    //TODO: сделать проверку всех возможных путей
     private func _subpathsOfDirectoryAtPathError() {
-        fatalError("Unimplemented")
+        let libInSystem = manager!.urls(for: .libraryDirectory, in: .systemDomainMask).first!
+        
+        do {
+            let subpathes = try manager!.subpathsOfDirectory(atPath: libInSystem.absoluteString)
+            print(subpathes)
+        } catch let error {
+            print(error)
+        }
     }
     
+    //TODO: сделать проверку всех возможных путей
     private func _subpathsAtPath() {
-        fatalError("Unimplemented")
+        let libInSystem = manager!.urls(for: .libraryDirectory, in: .systemDomainMask).first!
+        
+        if let subpathes = manager!.subpaths(atPath: libInSystem.absoluteString) {
+            print(subpathes)
+        } else {
+            print("Nothing hapened")
+        }
     }
     
     private func _createDirectoryAtURLWithIntermediateDirectoriesAttributesError() {
