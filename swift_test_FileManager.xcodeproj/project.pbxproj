@@ -15,6 +15,7 @@
 		EA3D8CB71F018E680047EB36 /* FilesPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3D8CB61F018E680047EB36 /* FilesPlayground.swift */; };
 		EA3D8CB91F01919C0047EB36 /* FilesPlaygroundExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3D8CB81F01919C0047EB36 /* FilesPlaygroundExtention.swift */; };
 		EA3D8CBB1F0198340047EB36 /* FilesPlaygroundEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3D8CBA1F0198340047EB36 /* FilesPlaygroundEntities.swift */; };
+		EAA6C3351F24E22000AAF507 /* String+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6C3341F24E22000AAF507 /* String+Helper.swift */; };
 		EAC007EB1F023A030058AE12 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC007EA1F023A030058AE12 /* Buttons.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		EA3D8CB61F018E680047EB36 /* FilesPlayground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesPlayground.swift; sourceTree = "<group>"; };
 		EA3D8CB81F01919C0047EB36 /* FilesPlaygroundExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesPlaygroundExtention.swift; sourceTree = "<group>"; };
 		EA3D8CBA1F0198340047EB36 /* FilesPlaygroundEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesPlaygroundEntities.swift; sourceTree = "<group>"; };
+		EAA6C3341F24E22000AAF507 /* String+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Helper.swift"; sourceTree = "<group>"; };
 		EAC007EA1F023A030058AE12 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +70,7 @@
 				EA3D8CBA1F0198340047EB36 /* FilesPlaygroundEntities.swift */,
 				EA3D8CB61F018E680047EB36 /* FilesPlayground.swift */,
 				EA3D8CB81F01919C0047EB36 /* FilesPlaygroundExtention.swift */,
+				EAA6C3341F24E22000AAF507 /* String+Helper.swift */,
 				EA3D8CA81F018B940047EB36 /* Main.storyboard */,
 				EA3D8CAB1F018B940047EB36 /* Assets.xcassets */,
 				EA3D8CAD1F018B940047EB36 /* LaunchScreen.storyboard */,
@@ -151,6 +154,7 @@
 			files = (
 				EA3D8CBB1F0198340047EB36 /* FilesPlaygroundEntities.swift in Sources */,
 				EA3D8CB71F018E680047EB36 /* FilesPlayground.swift in Sources */,
+				EAA6C3351F24E22000AAF507 /* String+Helper.swift in Sources */,
 				EA3D8CA71F018B940047EB36 /* ViewController.swift in Sources */,
 				EAC007EB1F023A030058AE12 /* Buttons.swift in Sources */,
 				EA3D8CA51F018B940047EB36 /* AppDelegate.swift in Sources */,
