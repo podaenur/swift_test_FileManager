@@ -196,7 +196,13 @@ class FilesPlayground: NSObject {
     // MARK: - Private
     
     private func _temporaryDirectory() {
-        fatalError("Unimplemented")
+        if  #available(iOS 10.0, *) {
+            let url = manager!.temporaryDirectory
+            print(url)
+            
+        } else {
+            print("iOS 10.0+ only")
+        }
     }
     
     private func _URLForDirectoryInDomainAppropriateForURLCreateError() {
