@@ -81,8 +81,11 @@ class FilesPlayground: NSObject {
         _removeItemAtPathError()
         print()
         _replaceItemAtURLWithItemAtURLBackupItemNameOptionsResultingItemURLError()
-        print()
-        _trashItemAtURLResultingItemURLError()
+        
+        if #available(iOS 11, *) {
+            print()
+            _trashItemAtURLResultingItemURLError()
+        }
     }
     
     func movingAndCopyingItems() {
@@ -310,32 +313,116 @@ class FilesPlayground: NSObject {
     }
     
     private func _createDirectoryAtURLWithIntermediateDirectoriesAttributesError() {
-        fatalError("Unimplemented")
+        /// Создает директорию с задаными аттрибутами по определенному пути.
+        
+        let timeInteravlString = Date().timeIntervalSinceNow.description
+        let path = URL(string: NSTemporaryDirectory())!.appendingPathComponent(timeInteravlString)
+        
+        do {
+            try manager!.createDirectory(at: path,
+                                         withIntermediateDirectories: true,
+                                         attributes: nil)
+        } catch let error {
+            print(error)
+        }
     }
     
     private func _createDirectoryAtPathWithIntermediateDirectoriesAttributesError() {
-        fatalError("Unimplemented")
+        /// Создает директорию с задаными аттрибутами по определенному пути.
+        
+        let timeInteravlString = Date().timeIntervalSinceNow.description
+        let path = URL(string: NSTemporaryDirectory())!.appendingPathComponent(timeInteravlString).absoluteString
+        
+        do {
+            try manager!.createDirectory(atPath: path,
+                                         withIntermediateDirectories: true,
+                                         attributes: nil)
+        } catch let error {
+            print(error)
+        }
     }
     
     private func _createFileAtPathContentsAttributes() {
-        fatalError("Unimplemented")
+        /// Создает файл с определенным содержимым и атрибутами в указанном месте
+        
+        let fileData = String.oneParagraphText.data(using: .utf8)
+        let dateInterval = Date().timeIntervalSinceNow
+        let fileName = "textFile\(dateInterval).dat"
+        let path = URL(string: NSTemporaryDirectory())!.appendingPathComponent(fileName)
+        
+        if manager!.createFile(atPath: path.absoluteString,
+                               contents: fileData,
+                               attributes: nil) {
+            print("File created")
+        } else {
+            print("File creating failed")
+        }
     }
     
+    //TODO: нужно реальное создание файла и удаление
     private func _removeItemAtURLError() {
-        fatalError("Unimplemented")
+        /// Удаляет файл или директорию по указанному URL
+        
+        let path = URL(string: NSTemporaryDirectory())!.appendingPathComponent("SomethingToRemove")
+        
+        do {
+            try manager!.removeItem(at: path)
+        } catch let error {
+            print(error)
+        }
     }
     
+    //TODO: нужно реальное создание файла и удаление
     private func _removeItemAtPathError() {
-        fatalError("Unimplemented")
+        /// Удаляет файл или директорию по указанному пути
+        
+        let path = URL(string: NSTemporaryDirectory())!.appendingPathComponent("SomethingToRemove")
+        
+        do {
+            try manager!.removeItem(atPath: path.absoluteString)
+        } catch let error {
+            print(error)
+        }
     }
     
+    //TODO: нужно реальные файлы для обмена
     private func _replaceItemAtURLWithItemAtURLBackupItemNameOptionsResultingItemURLError() {
-        fatalError("Unimplemented")
+        
+        let replacedPath = URL(string: "")!
+        let replacingPath = URL(string: "")!
+        let backUpName = replacedPath.lastPathComponent + ".old"
+        
+        /**
+         usingNewMetadataOnly - перезатрет meta данные новыми без сохранения старых
+         withoutDeletingBackupItem - оставит backup копию после успешной замены
+         */
+        let options = FileManager.ItemReplacementOptions.withoutDeletingBackupItem
+        
+        /// On input, a pointer for a URL object. When the item is replaced, this pointer is set to the URL of the new item. If no new file system object is required, the URL object in this parameter may be the same passed to the originalItemURL parameter. However, if a new file system object is required, the URL object may be different. For example, replacing an RTF document with an RTFD document requires the creation of a new file.
+        var resultingItemURL: NSURL?
+        
+        do {
+            try manager!.replaceItem(at: replacedPath,
+                                     withItemAt: replacingPath,
+                                     backupItemName: backUpName,
+                                     options: options,
+                                     resultingItemURL: &resultingItemURL)
+            
+            if let _resultURL = resultingItemURL {
+                print(_resultURL)
+            }
+        } catch let error {
+            print(error)
+        }
     }
     
     private func _trashItemAtURLResultingItemURLError() {
-        fatalError("Unimplemented")
+        //TODO: iOS 11 only
     }
+    
+    
+    
+    
     
     private func _copyItemAtURLToURLError() {
         fatalError("Unimplemented")
@@ -352,6 +439,10 @@ class FilesPlayground: NSObject {
     private func _moveItemAtPathToPathError() {
         fatalError("Unimplemented")
     }
+    
+    
+    
+
     
     private func _ubiquityIdentityToken() {
         fatalError("Unimplemented")
