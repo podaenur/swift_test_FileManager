@@ -420,24 +420,60 @@ class FilesPlayground: NSObject {
         //TODO: iOS 11 only
     }
     
-    
-    
-    
-    
+    //TODO: нужны реальные пути реального файла
     private func _copyItemAtURLToURLError() {
-        fatalError("Unimplemented")
+        /// Синхронно копирует файл по определенному URL в новое место
+        
+        let source = URL(string: NSTemporaryDirectory())!.appendingPathComponent("source")
+        let destination = URL(string: NSTemporaryDirectory())!.appendingPathComponent("destination")
+        
+        do {
+            try manager!.copyItem(at: source, to: destination)
+        } catch let error {
+            print(error)
+        }
     }
     
+    //TODO: нужны реальные пути реального файла
     private func _copyItemAtPathToPathError() {
-        fatalError("Unimplemented")
+        /// Синхронно копирует файл по определенному пути в новое место
+        
+        let source = URL(string: NSTemporaryDirectory())!.appendingPathComponent("source")
+        let destination = URL(string: NSTemporaryDirectory())!.appendingPathComponent("destination")
+        
+        do {
+            try manager!.copyItem(atPath: source.absoluteString, toPath: destination.absoluteString)
+        } catch let error {
+            print(error)
+        }
     }
     
+    //TODO: нужны реальные пути реального файла
     private func _moveItemAtURLToURLError() {
-        fatalError("Unimplemented")
+        /// Синхронно перемещает файл или директорию по указанному URL в новое место
+        
+        let source = URL(string: NSTemporaryDirectory())!.appendingPathComponent("source")
+        let destination = URL(string: NSTemporaryDirectory())!.appendingPathComponent("destination")
+        
+        do {
+            try manager!.moveItem(at: source, to: destination)
+        } catch let error {
+            print(error)
+        }
     }
     
+    //TODO: нужны реальные пути реального файла
     private func _moveItemAtPathToPathError() {
-        fatalError("Unimplemented")
+        /// Синхронно перемещает файл или директорию по указанному пути в новое место
+        
+        let source = URL(string: NSTemporaryDirectory())!.appendingPathComponent("source")
+        let destination = URL(string: NSTemporaryDirectory())!.appendingPathComponent("destination")
+        
+        do {
+            try manager!.moveItem(atPath: source.absoluteString, toPath: destination.absoluteString)
+        } catch let error {
+            print(error)
+        }
     }
     
     
