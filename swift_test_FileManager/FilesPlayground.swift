@@ -652,33 +652,88 @@ class FilesPlayground: NSObject {
         }
     }
     
-    
-    
-    
-    
+    //TODO: нужен реальный путь реального файла
     private func _fileExistsAtPath() {
-        fatalError("Unimplemented")
+        /// Вернет булевый флаг, показывающий существует ли файл или директория по заданному пути
+        
+        let path = NSTemporaryDirectory()
+        
+        if manager!.fileExists(atPath: path) {
+            print("File or directory exits")
+        } else {
+            print("It doesn\t exist")
+        }
     }
     
     private func _fileExistsAtPathIsDirectory() {
-        fatalError("Unimplemented")
+        /// Вернет булевый флаг, показывающий существует ли файл или директория по заданному пути. Выходной isDirectory параметр показывает указывает ли путь на директорию или на обычный файл
+        
+        let path = NSTemporaryDirectory()
+        var isDirectory: ObjCBool = false
+        
+        if manager!.fileExists(atPath: path, isDirectory: &isDirectory) {
+            let typeString = isDirectory.boolValue ? "Directory" : "File"
+            print("\(typeString) exits")
+        } else {
+            print("It doesn\t exist")
+        }
     }
     
+    //TODO: нужен реальный путь реального файла
     private func _isReadableFileAtPath() {
-        fatalError("Unimplemented")
+        /// Вернет булевый флаг, который показывает доступно ли вызываемому объекту чтение определенного файла
+        
+        let path = URL(string: NSTemporaryDirectory())!.appendingPathComponent("SomeReadableFile.dat")
+        
+        if manager!.isReadableFile(atPath: path.absoluteString) {
+            print("File is readable")
+        } else {
+            print("Reading specified file is denided")
+        }
     }
     
+    //TODO: нужен реальный путь реального файла
     private func _isWritableFileAtPath() {
-        fatalError("Unimplemented")
+        /// Вернет булевый флаг, который показывает доступно ли вызываемому объекту запись определенного файла
+        
+        let path = URL(string: NSTemporaryDirectory())!.appendingPathComponent("SomeWritableFile.dat")
+        
+        if manager!.isWritableFile(atPath: path.absoluteString) {
+            print("File is writable")
+        } else {
+            print("Writing specified file is denided")
+        }
     }
     
+    //TODO: нужен реальный путь реального файла
     private func _isExecutableFileAtPath() {
-        fatalError("Unimplemented")
+        /// Вернет булевый флаг, который показывает способна ли операционная система выполнять указанный файл
+        
+        let path = URL(string: NSTemporaryDirectory())!.appendingPathComponent("SomeExecutableFile.dat")
+        
+        if manager!.isExecutableFile(atPath: path.absoluteString) {
+            print("File is executable")
+        } else {
+            print("Executing specified file is denided")
+        }
     }
     
+    //TODO: нужен реальный путь реального файла
     private func _isDeletableFileAtPath() {
-        fatalError("Unimplemented")
+        /// Вернет булевый флаг, который показывает доступно ли вызываемому объекту удаление определенного файла
+        
+        let path = URL(string: NSTemporaryDirectory())!.appendingPathComponent("SomeDeletableFile.dat")
+        
+        if manager!.isDeletableFile(atPath: path.absoluteString) {
+            print("File is deletable")
+        } else {
+            print("Deleting specified file is denided")
+        }
     }
+    
+    
+    
+    
     
     private func _componentsToDisplayForPath() {
         fatalError("Unimplemented")
