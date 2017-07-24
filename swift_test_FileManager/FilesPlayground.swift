@@ -731,28 +731,54 @@ class FilesPlayground: NSObject {
         }
     }
     
-    
-    
-    
-    
     private func _componentsToDisplayForPath() {
-        fatalError("Unimplemented")
+        /// Вернет массив строк, представляющих видимые пользователю компоненты заданого пути
+        
+        let components = manager!.componentsToDisplay(forPath: NSTemporaryDirectory())
+        components?.forEach({ print($0) })
     }
     
     private func _displayNameAtPath() {
-        fatalError("Unimplemented")
+        /// Вернет 'display' имя файла или директории по определенному пути
+        
+        print(manager!.displayName(atPath: NSTemporaryDirectory()))
     }
     
     private func _attributesOfItemAtPathError() {
-        fatalError("Unimplemented")
+        /// Вернет аттрибуты элемента по заданному пути
+        
+        let path = NSTemporaryDirectory()
+        
+        do {
+            try manager!.attributesOfItem(atPath: path)
+        } catch let error {
+            print(error)
+        }
     }
     
     private func _attributesOfFileSystemForPathError() {
-        fatalError("Unimplemented")
+        /// Вернет словарь, описывающий аттрибуты установленной файловой системы на которой заданный путь установлен
+        
+        let path = NSTemporaryDirectory()
+        
+        do {
+            try manager!.attributesOfFileSystem(forPath: path)
+        } catch let error {
+            print(error)
+        }
     }
     
     private func _setAttributesOfItemAtPathError() {
-        fatalError("Unimplemented")
+        /// Устанавливает аттрибуты определенного файла или директории
+        
+        let path = URL(string: NSTemporaryDirectory())!.appendingPathComponent("SomeFile.dat")
+        let attributes: [FileAttributeKey: Any] = [FileAttributeKey.creationDate: Date()]
+        
+        do {
+            try manager!.setAttributes(attributes, ofItemAtPath: path.absoluteString)
+        } catch let error {
+            print(error)
+        }
     }
     
     
@@ -767,6 +793,10 @@ class FilesPlayground: NSObject {
         fatalError("Unimplemented")
     }
     
+    
+    
+    
+    
     private func _getRelationshipOfDirectoryAtURLToItemAtURLError() {
         fatalError("Unimplemented")
     }
@@ -775,6 +805,10 @@ class FilesPlayground: NSObject {
         fatalError("Unimplemented")
     }
     
+    
+    
+    
+    
     private func _fileSystemRepresentationWithPath() {
         fatalError("Unimplemented")
     }
@@ -782,6 +816,10 @@ class FilesPlayground: NSObject {
     private func _stringWithFileSystemRepresentationLength() {
         fatalError("Unimplemented")
     }
+    
+    
+    
+    
     
     private func _changeCurrentDirectoryPath() {
         fatalError("Unimplemented")

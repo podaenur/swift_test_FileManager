@@ -87,7 +87,7 @@
                                             <action selector="onMethodCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8W2-IF-Hil"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vcs-1L-WSx" customClass="CrossButton" customModule="swift_test_FileManager" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vcs-1L-WSx" customClass="CheckmarkButton" customModule="swift_test_FileManager" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="342" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
