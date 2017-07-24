@@ -855,16 +855,23 @@ class FilesPlayground: NSObject {
         }
     }
     
-    
-    
-    
-    
     private func _fileSystemRepresentationWithPath() {
-        fatalError("Unimplemented")
+        /// Вернет Си-строковое представление заданного пути, которая правильно закодирована Unicode строкой для использования файловой системой
+        
+        let path = NSTemporaryDirectory()
+        
+        let cString = manager!.fileSystemRepresentation(withPath: path)
+        print(cString)
     }
     
     private func _stringWithFileSystemRepresentationLength() {
-        fatalError("Unimplemented")
+        /// Возвращает NSString объект, чье содержимое доставлено из определенного Си-строкового пути
+        
+        let path = NSTemporaryDirectory()
+        let cString = manager!.fileSystemRepresentation(withPath: path)
+        let lenght = MemoryLayout<Int>.size
+        
+        print(manager!.string(withFileSystemRepresentation: cString, length: lenght))
     }
     
     
