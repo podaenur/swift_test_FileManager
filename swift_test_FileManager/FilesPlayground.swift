@@ -768,6 +768,7 @@ class FilesPlayground: NSObject {
         }
     }
     
+    //TODO: нужен реальный путь реального файла
     private func _setAttributesOfItemAtPathError() {
         /// Устанавливает аттрибуты определенного файла или директории
         
@@ -781,16 +782,29 @@ class FilesPlayground: NSObject {
         }
     }
     
-    
-    
-    
-    
+    //TODO: нужен реальный путь реального файла
     private func _contentsAtPath() {
-        fatalError("Unimplemented")
+        /// Возвращает содержимое файла по указанному пути
+        
+        let path = URL(string: NSTemporaryDirectory())!.appendingPathComponent("SomeTestFile.dat")
+        
+        if let content = manager!.contents(atPath: path.absoluteString) {
+            print("File has \(content.count) bytes")
+        } else {
+            print("File hasn't content or error occured")
+        }
     }
     
+    //TODO: нужны реальные пути реальных файлов
     private func _contentsEqualAtPathAndPath() {
-        fatalError("Unimplemented")
+        /// Вернет булевый флаг, который показывает имеет ли файл или директория по указанному пути одинаковое содержание
+        
+        let lhdPath = URL(string: NSTemporaryDirectory())!.appendingPathComponent("SomeFirstFile.dat")
+        let rhdPath = URL(string: NSTemporaryDirectory())!.appendingPathComponent("SomeSecondFile.dat")
+        
+        let result = manager!.contentsEqual(atPath: lhdPath.absoluteString, andPath: rhdPath.absoluteString) ? "are" : "aren't"
+        
+        print("Files \(result) same")
     }
     
     
