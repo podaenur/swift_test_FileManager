@@ -807,16 +807,52 @@ class FilesPlayground: NSObject {
         print("Files \(result) same")
     }
     
-    
-    
-    
-    
+    //TODO: нужны реальные пути реальных файлов
     private func _getRelationshipOfDirectoryAtURLToItemAtURLError() {
-        fatalError("Unimplemented")
+        /// Определяет тип взаимосвязи, которая существует между директорией и элементом
+        
+        let itemPath = URL(string: NSTemporaryDirectory())!.appendingPathComponent("SomeTestFile.dat")
+        let directoryPath = URL(string: NSTemporaryDirectory())!
+        
+        /**
+         contains   - Директория содержит определенный элемент
+         same       - Директория и элемент одинаковы. Эта взаимосвязть достигается, когда значение fileResourceIdentifierKey одинаково для директории и элемента
+         other      - Директория не содержит элемент и не та же, что и элемент
+         */
+        var relationship: FileManager.URLRelationship = .other
+        
+        do {
+            try manager!.getRelationship(&relationship,
+                                         ofDirectoryAt: directoryPath,
+                                         toItemAt: itemPath)
+            print("Relationship type is \(relationship)")
+        } catch let error {
+            print(error)
+        }
     }
     
+    //TODO: нужны реальные пути реальных файлов
     private func _getRelationshipOfDirectoryInDomainToItemAtURLError() {
-        fatalError("Unimplemented")
+        /// Определяет тип взаимосвязи, которая существует между системной директорией и определенным элементом
+        
+        let itemPath = URL(string: NSTemporaryDirectory())!.appendingPathComponent("SomeTestFile.dat")
+        let directoryPath = URL(string: NSTemporaryDirectory())!
+        
+        /**
+         contains   - Директория содержит определенный элемент
+         same       - Директория и элемент одинаковы. Эта взаимосвязть достигается, когда значение fileResourceIdentifierKey одинаково для директории и элемента
+         other      - Директория не содержит элемент и не та же, что и элемент
+         */
+        var relationship: FileManager.URLRelationship = .other
+        
+        do {
+            try manager!.getRelationship(&relationship,
+                                         ofDirectoryAt: directoryPath,
+                                         toItemAt: itemPath)
+            print("Relationship type is \(relationship)")
+        } catch let error {
+            print(error)
+        }
     }
     
     
