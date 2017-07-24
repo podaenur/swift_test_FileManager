@@ -115,7 +115,7 @@
                                             <action selector="onMethodCall:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KXk-dL-L1x"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ii-kA-GP4" customClass="CrossButton" customModule="swift_test_FileManager" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ii-kA-GP4" customClass="CheckmarkButton" customModule="swift_test_FileManager" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="494" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>

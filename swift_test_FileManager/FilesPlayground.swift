@@ -874,21 +874,25 @@ class FilesPlayground: NSObject {
         print(manager!.string(withFileSystemRepresentation: cString, length: lenght))
     }
     
-    
-    
-    
-    
+    //TODO: нужен реальный путь реальной директории
     private func _changeCurrentDirectoryPath() {
-        fatalError("Unimplemented")
+        /// Изменяет путь текущей рабочей директории на указанный путь
+        /// Внимательно! Этот метод изменяет текущую рабочую директорию для текущего процесса, не только для получателя
+        
+        let path = NSTemporaryDirectory()
+        
+        if manager!.changeCurrentDirectoryPath(path) {
+            print("Path did change")
+        } else {
+            print("Path changing fail")
+        }
     }
     
     private func _currentDirectoryPath() {
-        fatalError("Unimplemented")
+        /// Путь к текущей директории программ
+        
+        print(manager!.currentDirectoryPath)
     }
-    
-    
-    
-    
     
     private func _NSFullUserName() {
         /// Вернет строку, содержащую полное имя текущего пользователя
