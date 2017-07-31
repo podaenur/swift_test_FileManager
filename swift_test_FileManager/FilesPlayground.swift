@@ -261,8 +261,24 @@ class FilesPlayground: NSObject {
         }
     }
     
+    //TODO: нужен реальный путь
     private func _enumeratorAtURLIncludingPropertiesForKeysOptionsErrorHandler() {
-        //
+        
+        let path = URL(string: NSTemporaryDirectory())!
+        let options: FileManager.DirectoryEnumerationOptions = [.skipsPackageDescendants]
+        
+        let enumerator = manager!.enumerator(at: path,
+                                             includingPropertiesForKeys: [URLResourceKey.isWritableKey],
+                                             options: options) {
+                                                (URL, error) -> Bool in
+                                                print("URL: \(URL)")
+                                                print("Error: \(error)")
+                                                return true
+        }
+        
+        while let obj = enumerator?.nextObject() {
+            print(obj)
+        }
     }
     
     //TODO: сделать проверку всех возможных путей
@@ -811,6 +827,8 @@ class FilesPlayground: NSObject {
     private func _getRelationshipOfDirectoryAtURLToItemAtURLError() {
         /// Определяет тип взаимосвязи, которая существует между директорией и элементом
         
+        let types = ["contains", "same", "other"]
+        
         let itemPath = URL(string: NSTemporaryDirectory())!.appendingPathComponent("SomeTestFile.dat")
         let directoryPath = URL(string: NSTemporaryDirectory())!
         
@@ -825,7 +843,7 @@ class FilesPlayground: NSObject {
             try manager!.getRelationship(&relationship,
                                          ofDirectoryAt: directoryPath,
                                          toItemAt: itemPath)
-            print("Relationship type is \(relationship)")
+            print("Relationship type is \(types[relationship.rawValue])")
         } catch {
             print(error)
         }
@@ -835,6 +853,8 @@ class FilesPlayground: NSObject {
     private func _getRelationshipOfDirectoryInDomainToItemAtURLError() {
         /// Определяет тип взаимосвязи, которая существует между системной директорией и определенным элементом
         
+        let types = ["contains", "same", "other"]
+        
         let itemPath = URL(string: NSTemporaryDirectory())!.appendingPathComponent("SomeTestFile.dat")
         let directoryPath = URL(string: NSTemporaryDirectory())!
         
@@ -849,7 +869,7 @@ class FilesPlayground: NSObject {
             try manager!.getRelationship(&relationship,
                                          ofDirectoryAt: directoryPath,
                                          toItemAt: itemPath)
-            print("Relationship type is \(relationship)")
+            print("Relationship type is \(types[relationship.rawValue])")
         } catch {
             print(error)
         }
