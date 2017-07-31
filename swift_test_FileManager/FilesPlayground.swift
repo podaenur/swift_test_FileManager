@@ -215,7 +215,7 @@ class FilesPlayground: NSObject {
                                        appropriateFor: nil,
                                        create: false)
             print(url)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -244,7 +244,7 @@ class FilesPlayground: NSObject {
                                                         includingPropertiesForKeys: nil,
                                                         options: .skipsHiddenFiles)
             print(urls)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -256,7 +256,7 @@ class FilesPlayground: NSObject {
         do {
             let contents = try manager!.contentsOfDirectory(atPath: libInSystem.relativePath)
             print(contents)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -296,7 +296,7 @@ class FilesPlayground: NSObject {
         do {
             let subpathes = try manager!.subpathsOfDirectory(atPath: libInSystem.absoluteString)
             print(subpathes)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -322,7 +322,7 @@ class FilesPlayground: NSObject {
             try manager!.createDirectory(at: path,
                                          withIntermediateDirectories: true,
                                          attributes: nil)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -337,7 +337,7 @@ class FilesPlayground: NSObject {
             try manager!.createDirectory(atPath: path,
                                          withIntermediateDirectories: true,
                                          attributes: nil)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -367,7 +367,7 @@ class FilesPlayground: NSObject {
         
         do {
             try manager!.removeItem(at: path)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -380,7 +380,7 @@ class FilesPlayground: NSObject {
         
         do {
             try manager!.removeItem(atPath: path.absoluteString)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -411,7 +411,7 @@ class FilesPlayground: NSObject {
             if let _resultURL = resultingItemURL {
                 print(_resultURL)
             }
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -429,7 +429,7 @@ class FilesPlayground: NSObject {
         
         do {
             try manager!.copyItem(at: source, to: destination)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -443,7 +443,7 @@ class FilesPlayground: NSObject {
         
         do {
             try manager!.copyItem(atPath: source.absoluteString, toPath: destination.absoluteString)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -457,7 +457,7 @@ class FilesPlayground: NSObject {
         
         do {
             try manager!.moveItem(at: source, to: destination)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -471,7 +471,7 @@ class FilesPlayground: NSObject {
         
         do {
             try manager!.moveItem(atPath: source.absoluteString, toPath: destination.absoluteString)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -523,7 +523,7 @@ class FilesPlayground: NSObject {
         
         do {
             try manager!.setUbiquitous(true, itemAt: path, destinationURL: destination)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -537,7 +537,7 @@ class FilesPlayground: NSObject {
         
         do {
             try manager!.startDownloadingUbiquitousItem(at: path)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -551,7 +551,7 @@ class FilesPlayground: NSObject {
         
         do {
             try manager!.evictUbiquitousItem(at: path)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -566,7 +566,7 @@ class FilesPlayground: NSObject {
         
         do {
             try manager!.url(forPublishingUbiquitousItemAt: path, expiration: &expiration)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -583,7 +583,7 @@ class FilesPlayground: NSObject {
         
         do {
             try manager!.createSymbolicLink(at: path, withDestinationURL: destination)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -600,7 +600,7 @@ class FilesPlayground: NSObject {
         
         do {
             try manager!.createSymbolicLink(atPath: path.absoluteString, withDestinationPath: destination.absoluteString)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -617,7 +617,7 @@ class FilesPlayground: NSObject {
         
         do {
             try manager!.linkItem(at: source, to: destination)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -634,7 +634,7 @@ class FilesPlayground: NSObject {
         
         do {
             try manager!.linkItem(atPath: source.absoluteString, toPath: destination.absoluteString)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -647,7 +647,7 @@ class FilesPlayground: NSObject {
         
         do {
             try manager!.destinationOfSymbolicLink(atPath: path.absoluteString)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -751,7 +751,7 @@ class FilesPlayground: NSObject {
         
         do {
             try manager!.attributesOfItem(atPath: path)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -763,7 +763,7 @@ class FilesPlayground: NSObject {
         
         do {
             try manager!.attributesOfFileSystem(forPath: path)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -777,7 +777,7 @@ class FilesPlayground: NSObject {
         
         do {
             try manager!.setAttributes(attributes, ofItemAtPath: path.absoluteString)
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -826,7 +826,7 @@ class FilesPlayground: NSObject {
                                          ofDirectoryAt: directoryPath,
                                          toItemAt: itemPath)
             print("Relationship type is \(relationship)")
-        } catch let error {
+        } catch {
             print(error)
         }
     }
@@ -850,7 +850,7 @@ class FilesPlayground: NSObject {
                                          ofDirectoryAt: directoryPath,
                                          toItemAt: itemPath)
             print("Relationship type is \(relationship)")
-        } catch let error {
+        } catch {
             print(error)
         }
     }
